@@ -38,6 +38,8 @@ namespace MVC_EF.Controllers
         }
         [HttpPost]
         public IActionResult Create(User user) {
+            var t = _repo.GetUsers();
+
             _repo.Create(user);
             return RedirectToAction("Index");
         }
